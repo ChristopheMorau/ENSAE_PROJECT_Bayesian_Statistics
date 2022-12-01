@@ -1,5 +1,7 @@
 import numpy as np
 import math
+from mpmath import *
+from decimal import *
 
 #design matrix
 cluster_1 = np.random.normal(-5, 0.5, (4, 20))
@@ -42,7 +44,8 @@ def prior_gamma(gamma):
     return p
 
 def likelihood(X, gamma, c):
-    L = math.pi**(-n*p/2)  #pb : gets 0
+    # L = )  #pb : gets 0
+    L = 1 #we remove constants with regard to gamma and c
     K = len(np.unique(c))
     p_gamma = int(np.sum(gamma))
     gamma_indices = np.argwhere(gamma).transpose()[0]
