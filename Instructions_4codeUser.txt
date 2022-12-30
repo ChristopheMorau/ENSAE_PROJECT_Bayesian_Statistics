@@ -1,0 +1,34 @@
+>> Ouvrir le script Python au format .ipynb de préférence à l'aide du logiciel Jupyter Notebook
+
+>> Le script comporte une cellule de code non numérotée puis 4 parties numérotées :
+	
+	§ Cellule de code non numérotée / 
+		"initial_algo = True" signifie que l'algorithme original (i.e. tel que décrit dans l'article) va être lancé
+		"initial_algo = False" signifie que l'algorithme alternatif va être lancé
+	
+	§ Partie 0 / Préliminaires 
+		0.0. Importation des packages nécessaires
+		0.1. Définition du scenario de test (15 samples, 2 clusters, 100 variables, dont 20 discriminantes)
+		0.2. Définition des hyperparamètres avec les valeurs recommandées dans l'article
+		
+	§ Partie 1 / Fonctions
+		1.0. Définition de l'a priori de gamma et de la log-vraisemblance
+		1.1. Algorithme de mise à jour de gamma (le vecteur latent)
+		1.2. Algorithme original de mise à jour de c (le vecteur des clusters)
+		1.3. Autres fonctions utiles
+		1.4. Algorithme alternatif de mise à jour de c (le vecteur des clusters)
+
+	§ Partie 2 / Lancement de la chaîne
+		2.0. Lancement de la chaîne avec l'algo. original de maj de c (si "initial_algo = True")
+		2.1. Lancement de la chaîne avec l'algo. alternatif de maj de c (si "initial_algo = False")
+
+	§ Partie 3 / Affichage des résultats de l'algo. alternatif (si "initial_algo = False")
+		3.0. Plots de l'évolution du nombre de variables dans gamma et du nombre de clusters dans c
+		3.1. Obtention d'une partition finale du dataset en utilisant les vecteurs c obtenus au fil des itérations
+			ainsi que la méthode de consensus de la matrice de co-association
+
+>> Pour exécuter le notebook, l'utilisateur doit suivre les consignes suivantes :
+
+	/ Renseigner "initial_algo = True" ou bien "initial_algo = False" dans la première cellule de code
+	/ Lancer le script dans son intégralité (toutes les cellules)
+	/ Dans le cas où l'utilisateur a choisi "initial_algo = False", aller à la partie 3 du script afin de consulter les résultats
